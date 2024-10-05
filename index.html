@@ -1,0 +1,327 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover" /><title>
+  观澜湖高尔夫
+</title>
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js "></script>
+  <script src="https://wxgolfbooking.missionhillschina.com/js/jquery-1.11.3.min.js?v=20210709"></script>
+  <script src="https://wxgolfbooking.missionhillschina.com/js/layer/layer.js?v=20210709"></script>
+  <script src="https://wxgolfbooking.missionhillschina.com/component/swiper/swiper.min.js?v=20210709"></script>
+  <script src="https://wxgolfbooking.missionhillschina.com/js/main.js?v=20210709"></script>
+  <script src="https://wxgolfbooking.missionhillschina.com/js/Page/index.js?v=20240918"></script>
+
+  <link href="https://wxgolfbooking.missionhillschina.com/component/swiper/swiper.min.css?v=20210709" rel="stylesheet" /><link href="https://wxgolfbooking.missionhillschina.com/css/Page/main.css?v=20210709" rel="stylesheet" /><link href="https://wxgolfbooking.missionhillschina.com/css/Page/index.css?v=20210709" rel="stylesheet" />
+  <script>
+    $(function () {
+      //微信接口注入权限验证配置
+      wx.config({
+        debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc
+        appId: '', // 必填，公众号的唯一标识
+        timestamp: '', // 必填，生成签名的时间戳
+        nonceStr: '', // 必填，生成签名的随机串
+        signature: '',// 必填，签名
+        jsApiList: ['scanQRCode'], // 必填，需要使用的JS接口列表
+        openTagList: ['wx-open-launch-weapp']
+      });
+
+      wx.ready(function () {
+        // config信息验证后会执行 ready 方法，所有接口调用都必须在 config 接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在 ready 函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在 ready 函数中
+      });
+
+      wx.error(function (res) {
+        // config信息验证失败会执行 error 函数，如签名过期导致验证失败，具体错误信息可以打开 config 的debug模式查看，也可以在返回的 res 参数中查看，对于 SPA 可以在这里更新签名
+      });
+    });
+  </script>
+</head>
+<body>
+<form method="post" action="./index.aspx" id="form1">
+  <div class="aspNetHidden">
+    <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="oj9JByHxWJUxF93uRECeECVI/dNYPjZWFpwlNK2umT+rHUe3cVB6iWxFucmLIXo/4TrykJrANgaTh3kb4rVyFD3PlB7cszlJTRa7EuIS7M+QW+TGr8J45BhrItPsTjlM" />
+  </div>
+
+  <div class="aspNetHidden">
+
+    <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="90059987" />
+  </div>
+  <input type="hidden" name="hfMemNo" id="hfMemNo" />
+  <input type="hidden" name="hfStatus" id="hfStatus" />
+  <input type="hidden" name="hfCardHold" id="hfCardHold" />
+
+  <div class="main-box">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="menu_box">
+      <a href="#" onclick="GotoPage('TeeTime/TeeTimeBooking.aspx')">
+        <img src="https://wxgolfbooking.missionhillschina.com/img/index/ico_golf.png" />
+        <span>高球预订</span>
+      </a>
+      <a href="User/MarathonScheme.aspx">
+        <img src="https://wxgolfbooking.missionhillschina.com/img/index/ico_mls.png" />
+        <span>马拉松</span>
+      </a>
+      <a href="https://academy.missionhillschina.com/CollegeNew/Login.aspx?lg=cn">
+        <img src="https://wxgolfbooking.missionhillschina.com/img/index/ico_academies.png" />
+        <span>学院预订</span>
+      </a>
+      <a href="https://missionhillschina.com/memberlife/index.html">
+        <img src="https://wxgolfbooking.missionhillschina.com/img/index/ico_memberlife.png" />
+        <span>会员生活</span>
+      </a>
+      <a href="#" onclick="GotoPage('User/CardInfoNew.aspx')">
+        <img src="https://wxgolfbooking.missionhillschina.com/img/index/ico_spa.png" />
+        <span>Spa水疗</span>
+      </a>
+      <a href="PosCheckin/PosIndex.aspx">
+        <img src="https://wxgolfbooking.missionhillschina.com/img/index/ico_dj.png" />
+        <span>自助登记</span>
+      </a>
+      <a onclick="showAgreement()">
+        <img src="https://wxgolfbooking.missionhillschina.com/img/index/ico_jz.png" />
+        <span>自助结账</span>
+      </a>
+      <a href="#" onclick="GotoPage('Account/ElectronicCoupons.aspx')">
+        <img src="https://wxgolfbooking.missionhillschina.com/img/index/ico_dzq.png" />
+        <span>电子券</span>
+      </a>
+      <a href="#" onclick="GotoPage('Integral/CreditsExchange.aspx')">
+        <img src="https://wxgolfbooking.missionhillschina.com/img/index/ico_jf.png" />
+        <span>积分兑换</span>
+      </a>
+      <a href="PosPayment/PosBillsQuery.aspx">
+        <img src="https://wxgolfbooking.missionhillschina.com/img/index/ico_zd.png" />
+        <span id="myBills">我的账单</span>
+      </a>
+      <a href="https://www.missionhillschina.com">
+        <img src="https://wxgolfbooking.missionhillschina.com/img/index/mhlogo.png" />
+        <span>观澜湖</span>
+      </a>
+      <a href="#" onclick="showNotice()">
+        <img src="https://wxgolfbooking.missionhillschina.com/img/index/ico_notice.png" />
+        <span>球场公告</span>
+      </a>
+      <a href="https://missionhillschina.com/bookmh/fcb_sz.html">
+        <img src="https://wxgolfbooking.missionhillschina.com/img/index/ico_fengchan.png" />
+        <span>封场信息</span>
+      </a>
+      <a href="https://www.missionhillschina.com/bookmh/public_holiday_1.html">
+        <img src="https://wxgolfbooking.missionhillschina.com/img/index/ico_jiaqi.png" />
+        <span>公众假期</span>
+      </a>
+      <a href="https://ccm-wechatconsole.shijicloud.com/h5/pages/shopMall/index/custom?wi=3a33605cdb234e3e81f06272a9ac6b0b&pageId=30000051&pageType=0">
+        <img src="https://wxgolfbooking.missionhillschina.com/img/index/ico_gouwu.png" />
+        <span>线上商城</span>
+      </a>
+    </div>
+    <div class="activity_box">
+      <div class="activity_title">
+        <div class="activity_left fontColor-Dark">
+          <span>活动及推广</span>
+        </div>
+        <div class="activity_right" style="display: none">
+          <a href="#" onclick="showNotice()">
+            <img src="https://wxgolfbooking.missionhillschina.com/img/index/notice_lb.png" width="15" height="15" />
+            <span>球场公告</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="activity_centent">
+        <div id="activity_box4" style="display:none">
+          <a href="https://missionhillschina.com/golfathon/#activities5" target="_blank">
+            <img src="https://wxgolfbooking.missionhillschina.com/img/Index/2023031501.jpg" />
+          </a>
+        </div>
+
+        <wx-open-launch-weapp
+          id="launch-btn"
+          appid="wxffa9c9132c8c65ea"
+          path="/packages/golf-mc-laren-campaign2/pages/index/index?channel=guanlanhu">
+          <script type="text/wxtag-template">
+            <style>
+              img { width:100%; height:100%; }
+            </style>
+            <div id="" style="display:none">
+              <img class="img" src="https://wxgolfbooking.missionhillschina.com/img/Index/FILA20240630.jpg" />
+            </div>
+          </script>
+        </wx-open-launch-weapp>
+
+        <div id="activity_box2">
+          <a href="https://wxgolfbooking.missionhillschina.com/Marathon/MarathonAdd.aspx?salesno=000000" target="_blank">
+            <img src="https://wxgolfbooking.missionhillschina.com/img/Index/20240416.jpg" />
+          </a>
+        </div>
+        <wx-open-launch-weapp
+          id="launch-btn"
+          appid="wxffa9c9132c8c65ea"
+          path="/pages/main/equipment/index">
+          <script type="text/wxtag-template">
+            <style>
+              img { width:100%; height:100%; }
+            </style>
+            <div id="">
+              <img class="img" src="https://wxgolfbooking.missionhillschina.com/img/Index/FILA20240630.jpg" />
+            </div>
+          </script>
+        </wx-open-launch-weapp>
+        <div id="activity_box3">
+          <a href="https://ccm-wechatconsole.shijicloud.com/h5/pages/shopMall/index/custom?wi=3a33605cdb234e3e81f06272a9ac6b0b&pageId=30000379&pageType=1" target="_blank">
+            <img src="https://wxgolfbooking.missionhillschina.com/img/Index/20221012.jpg" />
+          </a>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <div class="footer-box">
+
+
+    <div class="cus-tabbar">
+      <a id="tabIndex" onclick="goPage(0)" class="cus-tabbar-item">
+        <img src="https://wxgolfbooking.missionhillschina.com/img/FootTabbar/foot_home.png" alt="">
+        <span id="FooterTabbar_Label1">首页</span>
+      </a>
+      <a id="tabOrder" onclick="goPage(1)" class="cus-tabbar-item">
+        <img src="https://wxgolfbooking.missionhillschina.com/img/FootTabbar/foot_dd.png" alt="">
+        <span id="FooterTabbar_Label2">订单</span>
+      </a>
+      <a id="tabMemberCard" onclick="goPage(2)" class="cus-tabbar-item">
+        <img src="https://wxgolfbooking.missionhillschina.com/img/FootTabbar/foot_hyk.png" alt="">
+        <span id="FooterTabbar_Label4">会员卡</span>
+      </a>
+      <a id="tabStatements" onclick="goPage(3)" class="cus-tabbar-item">
+        <img src="https://wxgolfbooking.missionhillschina.com/img/FootTabbar/foot_yjd.png" alt="">
+        <span id="FooterTabbar_Label5">月结单</span>
+      </a>
+      <a id="tabCenter" onclick="goPage(4)" class="cus-tabbar-item">
+        <img src="https://wxgolfbooking.missionhillschina.com/img/FootTabbar/foot_hyzx.png" alt="">
+        <span id="FooterTabbar_Label3">个人中心</span>
+      </a>
+    </div>
+
+    <style>
+      .cus-tabbar {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: row;
+        position: fixed;
+        z-index: 500;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #B17A44;
+        font-size: 14px;
+        color: white;
+        height: 60px;
+        overflow: hidden;
+        padding-bottom:20px;
+      }
+
+      .cus-tabbar-item {
+        width: 0;
+        flex-grow: 1;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .cus-tabbar-item > img {
+        width: 30px;
+        height:30px;
+      }
+
+      .cus-tabbar-item > span {
+      }
+    </style>
+
+    <script>
+      //页面初始化
+      $(function () {
+        $('.cus-tabbar-item').each(function () {
+          tabChange(this);
+        });
+      });
+
+
+      function tabChange(oneTab) {
+        var imgPath = '../img/FootTabbar/';
+        var curHerf = window.location.pathname.toLowerCase();
+
+        if ($(oneTab)[0].id == "tabIndex" && (curHerf.indexOf("/index.aspx") >= 0 || curHerf.indexOf("/indexhk.aspx") >= 0)) {
+          $($(oneTab).find("img")[0]).attr('src', imgPath + 'foot_home_bs.png');
+          return false;
+        }
+
+        if ($(oneTab)[0].id == "tabOrder" && curHerf.indexOf("/orderlist.aspx") >= 0) {
+          $($(oneTab).find("img")[0]).attr('src', imgPath + 'foot_dd_bs.png')
+          return false;
+        }
+
+        if ($(oneTab)[0].id == "tabMemberCard" && curHerf.indexOf("/mycard.aspx") >= 0) {
+          $($(oneTab).find("img")[0]).attr('src', imgPath + 'foot_hyk_bs.png')
+          return false;
+        }
+
+        if ($(oneTab)[0].id == "tabStatements" && curHerf.indexOf("/statementsmonthly.aspx") >= 0) {
+          $($(oneTab).find("img")[0]).attr('src', imgPath + 'foot_yjd_bs.png')
+          return false;
+        }
+
+        if ($(oneTab)[0].id == "tabCenter" && curHerf.indexOf("/personalcenter.aspx") >= 0) {
+          $($(oneTab).find("img")[0]).attr('src', imgPath + 'foot_hyzx_bs.png')
+          return false;
+        }
+      }
+
+      function goPage(index) {
+        var curHerf = window.location.pathname.toLowerCase();
+
+        if (index == 0) {
+          window.location.href = "../Index.aspx";
+        }
+        else if (index == 1 && curHerf.indexOf("/orderlist.aspx") < 0) {
+          window.location.href = "../User/OrderList.aspx";
+        }
+        else if (index == 2 && curHerf.indexOf("/mycard.aspx") < 0) {
+          window.location.href = "../img/img.png";
+        }
+        else if (index == 3 && curHerf.indexOf("/statementsmonthly.aspx") < 0) {
+          window.location.href = "../Account/StatementsMonthly.aspx";
+        }
+        else if (index == 4 && curHerf.indexOf("/personalcenter.aspx") < 0) {
+          window.location.href = "../User/PersonalCenter.aspx";
+        }
+      }
+    </script>
+
+
+    <script type="text/javascript">
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?01253411631a2613e973b389349750f8";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  </div>
+
+  <!--    <script language='javascript'>var json=eval([{"Transport_newtransportationbooking3_Message1":"该时段内没有车次,不能候补","Transport_newtransportationbooking3_Message0":"是否确定取消?","Transport_newtransportationbooking3_Message2":"在时间范围内有匹配的班次,不能候补!","Transport_ModifyBooking_message":"预订单被锁定","String1":"","Handicap":"差点","EvaOrderList_Button2":"查看评分","EvaOrderList_Button1":"评分","ExceededDate":"对不起,已超出提前可预订天数!","CanNotPlayOrBooked":"该时段不能打球或者已被预订","Transport_ModifySeat_Wrong2":"创建巴士线路失败","Transport_ModifySeat_Wrong0":"获取预订信息失败","Transport_ModifySeat_Wrong1":"不能刪除所有线路","SelectPlayer":"请选择人数","MobileIncorrect":"验证手机号码格式不正确","BagDoNotBelongToMember":"球包{0}不属于会员{1}","Available":"可用","TransportCancel":"将取消整张预订单,是否确定取消?","CouponNotEnough":"对不起，券库存不足，请联系观澜湖球会","Account_index_GetUserRightFailure":"获取会员权益失败","NotModify":"该预订已有登记人员，不能修改！","AreaSZ":"深圳/东莞","AreaHN":"海南","CannotCourse":"对不起,不能预定该球场!","Packer_Cancel":"取消","CannotCancel":"您不能取消当天(过去)的预订","AreYouSureConfirm":"是否要确认？","IntegralDeductionFailure":"积分扣减失败","NotEnoughIntegral1":"去年或本年积分均不够本次积分兑换","Account_index_CacheMuliteLanguageInfoFailure":"获取多语言信息失败","WaitingForAvailable":"在时间范围{0}~{1}内有球场,不能候补","viaSMSAvailable":"非国内手机，请使用邮箱获取","Transport_WaitSeatComfirmUC_BindTimeInfoWrong":"生成预订时间失败","SelectMarathon":"请选择马拉松号","ErrorApology":"尊敬的用户,因此给您带来的不便我们深表歉意,请{0}返回上一个页面.","WatingConfirmWrong6":"。为避免产生迟取消费用，请致电预订部确认候补时间！0755&#45;&#45;28020888-33333。","WatingConfirmWrong4":"此候补单已确认，不能再取消，请刷新数据","WatingConfirmWrong5":"此候补单已被取消，不能重复取消，请刷新数据","WatingConfirmWrong2":"此候补单已确认，不能重复确认，请刷新数据","WatingConfirmWrong3":"此候补单已被取消，不能再确认，请刷新数据","WatingConfirmWrong1":"指定日期已有预订单，不能候补确认，请先取消已有的预订单：","VEmailFailure":"验证邮箱失败","TransportWaitinghasbeenCancel":"此候补单已被取消，不能重复取消","Advisory":"咨询","GuestTypeGuest":"嘉宾","MonthlyStatementPayment":"月结单付款","Transport_ModifyBooking_Wrong0":"获取会员预订信息失败","Transport_ModifyBooking_Wrong1":"验证订单失败","Transport_ModifyBooking_Wrong2":"锁定线路失败","Account_ModifyPassword_Wrong0":"修改密码失败","Account_ModifyPassword_Wrong1":"旧密码错误","NoShow":"对不起，Noshow日期不能预定","MarathonCanNotEdit":"对不起，该预订含有马拉松球员预订，您需要联系预订销售部部修改。","TTimeBookingCancelOwner":"非本人预订，不能继续操作","NotAvailableWaiting":"{0} 在该时段不可以候补","Logout":"{0} 重复登录,之前登录的用户被强制退出.","VPhoneFailure":"验证电话号码失败","GetRemoteDataFailure":"获取数据失败","LeftExpire":"（还剩{0}天过期）","ExpiryDate":"预定日期超过会籍使用有效期","Transport_TransportUC_ValidateSeatWrong1":"录入票数不能超过允许的票数.\\r\\n允许预订票数:{0},已预订票数:{1},当前预订票数:{2}!","Transport_TransportUC_ValidateSeatWrong0":"不能超过允许的次数.\\r\\n允许预订次数:{0}!","Transport_TransportUC_ValidateSeatWrong2":"当前输入票数超过剩余票数!","SelectLocation":"请选择区域","Haikou":"海口","ServerMessage_001":"获取微信信息失败","ServerMessage_002":"此帐号已经被其它微信绑定过，不能重复绑定","ServerMessage_003":"绑定失败","Account_RegisterVisitor_Wrong2":"验证手机失败","Account_RegisterVisitor_Wrong3":"填写的手机号码已存在","Account_RegisterVisitor_Wrong4":"登录名已经存在，请重新输入","Tips_msg85":"马拉松设置此球场可打{0}次，此马拉松选手已打足次数或者已预订完次数","Tips_msg84":"获取身份权益失败,请联系管理员！","Tips_msg87":"充次","Tips_msg86":"获取身份权益失败,请联系管理员！","Tips_msg81":"该通行证不存在剩余可打次数，不能预定马拉松！","Tips_msg80":"获取通行证已打球次数失败，请重试!","Tips_msg83":"球会新规定，没有北戴球场权益的客人，即使放弃决赛也不能打北戴球场","Tips_msg82":"球场不属于本次马拉松球场列表,放弃决赛然后才能打此球场","Tips_msg89":"其它","Tips_msg88":"扣次","Tips_msg94":"已被绑定过，不能重复绑定，若有疑问请联系管理员！","Tips_msg95":"会员次卡卡号无需绑定！","Tips_msg96":"信息有误，请重新绑定！","Tips_msg97":"绑定成功","Tips_msg90":"次卡卡号不能空！","Tips_msg91":"此次卡卡号不存在！","Tips_msg92":"此次卡卡号可能无效、挂失、未发卡，不能绑定！","Tips_msg93":"此次卡卡号尚未提供手机号码，不能绑定！","Tips_msg98":"参数异常","Tips_msg99":"无限次","Tips_msg49":"解绑失败","Tips_msg48":"解绑成功","Tips_msg41":"正常参赛","Tips_msg40":"暂无密码","Tips_msg43":"退赛-转出","Tips_msg42":"参赛-转入","Tips_msg45":"无效","Tips_msg44":"退赛","Tips_msg47":"更新成功","Tips_msg46":"更新失败","Tips_msg58":"深圳访客只能使用马拉松号预订","Tips_msg59":"马拉松身份信息错误","Tips_msg50":"等待中","Tips_msg51":"待确认","Tips_msg52":"无效候补单号","Tips_msg53":"取消成功","Tips_msg54":"确认取消","Tips_msg55":"返回首页","Tips_msg56":"正在修改的订单号:{0}","Tips_msg57":"不选择马拉松","Tips_msg69":"暂无可选技师数据","Tips_msg68":"预约","Tips_msg63":"成功","Tips_msg62":"已取消","Tips_msg61":"马拉松号重复","Tips_msg60":"{0}马拉松密码不正确","Tips_msg67":"输入技师姓名搜索","Tips_msg66":"未支付","Tips_msg65":"球会现付","Tips_msg64":"已支付","Tips_msg78":"马拉松号选手已被处罚","Tips_msg79":"马拉松号已过期","Tips_msg72":"马拉松号不能为空！","Tips_msg73":"马拉松球场列表未设置！","Tips_msg70":"马拉松比赛未开始！","Tips_msg71":"马拉松未开始或者已结束！","Tips_msg76":"马拉松号选手已退赛","Tips_msg77":"马拉松号选手已转让","Tips_msg74":"马拉松号不存在","Tips_msg75":"此马拉松号未绑定手机号码，请联系管理员添加！","Tips_msg18":"请输入传真号码","Tips_msg19":"请输入电话预订密码","Tips_msg14":"国家","Tips_msg15":"请输入手机号码","Tips_msg16":"地区","Tips_msg17":"请输入电话号码","Tips_msg10":"请输入会员证号或邮箱","Tips_msg11":"请输入出生日期","Tips_msg12":"请输入邮箱","Tips_msg13":"请输入联系人","Tips_msg29":"非会员","Tips_msg28":"会员","Tips_msg27":"请进行身份验证","Tips_msg26":"修改失败","Tips_msg25":"已被绑定过，不能重复绑定！","Tips_msg24":"后台服务异常，请联系管理员！","Tips_msg23":"账号是必需的","Tips_msg22":"手机发送","Tips_msg21":"请输入验证号码","Tips_msg20":"请选择默认语言","Tips_msg38":"在此将内容进行详细描述","Tips_msg39":"暂无积分","Tips_msg36":"请选择消息类型","Tips_msg37":"请输入标题","Tips_msg34":"每洞杆数","Tips_msg35":"公平杆数","Tips_msg32":"标准杆","Tips_msg33":"难度系数","Tips_msg30":"是否为马拉松用户？","Tips_msg31":"洞号","NumberOfGuests":"可带嘉宾总数","NoReply":"未回复","Transport_newtransportationbooking3_Wrong0":"获得系统参数失败","Account_RegisterHN_Wrong0":"验证手机号码失败","Account_RegisterHN_Wrong2":"手机号码与注册号码不一致","Account_RegisterHN_Wrong3":"验证验证码失败","Account_RegisterHN_Wrong4":"请输入正确的验证码","TeeTime":"TeeTime时间已被占用!","Account_MemBinding_msg1":"请输入账号","Account_MemBinding_msg2":"请输入密码","Transport_AvailabilityTransportationTime_BindDataWrong0":"获取巴士列表失败","Submit":"提交","Account_RegisterVisitor_Message2":"密码是必需的","Account_RegisterVisitor_Message3":"两次密码不一致","Account_RegisterVisitor_Message0":"注册成功","Account_RegisterVisitor_Message1":"邮件长度不能超过30","MobileExist":"手机号码已经存在","EmailIncorrect":"验证邮箱格式不正确","UnameExist":"填写的用户名邮箱已存在","Face_Tips5":"您的人脸信息审核未通过，请选择其他认证方式","Face_Tips4":"您的人脸信息状态异常，请选择其他认证方式","Face_Tips1":"请点击此处拍照","Face_Tips3":"您的人脸信息正在审核中，请选择其他认证方式","Face_Tips2":"未找到您的人脸信息，点击确定将离开此页前往人脸注册流程，您此前的操作将不被保留，请选择是否继续。","CheckWechatbind":"检查微信是否已绑定失败","UnlockFailed":"解锁TeeTime失败","UpdateSuccess":"预订修改成功","Account_Register_Wrong4":"发送邮件失败","Account_Register_Wrong5":"出生日期错误","Account_Register_Wrong2":"出生日期错误,您还剩 {0} 次尝试机会","Account_Register_Wrong3":"该用户已经注册过,如果您忘记密码,请点击忘记密码!","Account_Register_Wrong0":"注册失败","Account_Register_Wrong1":"会员证号错误","Account_index_CheckUserWrong2":"该会员号码无效","Account_index_CheckUserWrong3":"无效的会员号码","Account_index_CheckUserWrong0":"用户名称或密码错误","Account_index_CheckUserWrong1":"您还没有注册,不能使用网上预定系统,是否立即注册?","Complaints":"投诉","DateBeyond":"预订日期超出可预订日期范围","EmailRequired":"邮箱是必需的","MemberTelPasswordIncorrect":"请您输入正确的电话预订密码!","CancelPush":"取消订单将会造成【{3}】每人{0}元的行政费,共计:{2}元,是否确认取消?","CancelTips":"提前48小时取消预订无需支付罚款。\r\n在48小时以内24小时以上取消预订，本球会将会收取每位RMB100的罚款。\r\n小于24小时取消预订，本球会将会收取每位RMB200的罚款。","Comfirm":"确认","Transport_WaitSeatComfirmUC_SetDataSourceWrong":"获取线路站点失败","Evaluation_Tips":"评分成功","PendingConfirmation":"候补等待","Account_ModifyPassword_Message0":"旧密码是必需的","Account_ModifyPassword_Message1":"新密码是必需的","Account_ModifyPassword_Message2":"确定新密码错误","Account_index_VolidateMessage":"用户名称或密码不能为空","Account_index_CheckUserFailure":"获取登录信息失败","MemberNoNotExist":"会员证号 {0} 不存在","UI_Volidate_Message":"验证出生日期格式错误","Transport_newtransportationbooking2_Wrong0":"获取预订座位信息失败","Transport_newtransportationbooking2_Wrong1":"获取预订次数失败","Transport_newtransportationbooking2_Wrong2":"查询巴士线路失败","Transport_newtransportationbooking2_Wrong3":"检查订单失败","Tips_msg9":"条款及细则","Tips_msg8":"关闭","Tips_msg5":"标题","Tips_msg4":"获取验证码","Tips_msg7":" ","Tips_msg6":"内容","Tips_msg1":"请输入储次卡号","Tips_msg3":"请输入验证码","Tips_msg2":"请输入手机号码","RewardLastYearNotEnough":"您去年的剩余积分不足，不能兑换。请问你会否使用今年的积分继续进行兑换？","Face_Label8":"通过会员登录密码验证","Face_Label5":"人脸验证","Face_Label4":"请进行身份验证","Face_Label7":"通过刷脸识别（已注册人脸）","Face_Label6":"密码验证","Face_Label1":"会员证号","Face_Label3":"会员验证","Face_Label2":"会员密码","WechatBindFail":"绑定微信失败！","Account_CheckCodeAjax_Message4":"欢迎您办理观澜湖SPA业务，当前验证码：{0}","Account_CheckCodeAjax_Message2":"欢迎绑定马拉松,您当前绑定的验证码:{0}","Account_CheckCodeAjax_Message3":"您正在绑定储次卡，您当前绑定的验证码:{0}","Account_CheckCodeAjax_Message0":"恭喜你注册成功!密码已发送到您的邮箱,请查收：{0}","Account_CheckCodeAjax_Message1":"欢迎注册观澜湖网上预定,您当前注册的验证码:{0}","Updatedsucessfully":"修改成功","Transport_CancelWaitingConfirm_Wrong0":"您是否确定取消这条候补信息?","Transport_newtransportationbooking1_Wrong0":"获取线路失败","NotExceedNumber":"嘉宾人数不能超过会员可带嘉宾人数","Transport_newtransportationbooking1_Message3":"请选择开车时间","Transport_newtransportationbooking1_Message2":"请选择下车点","Transport_newtransportationbooking1_Message1":"请选择上车点","Transport_newtransportationbooking1_Message0":"请选择路线","InvalidMember":"不存在该会员","MemNoCardhold":"此会员证号还未审核","No":"否","CheckLogin":"检查是否登录失败","PosBills_memberGZ_Wrong1":"人脸对比失败","BookRight":"对不起,该天没有预订该球场的权限!","Transport_CancelWaitingConfirm_Message2":"取消候补失败","Transport_CancelWaitingConfirm_Message0":"您是否确定取消这条候补信息?","Transport_CancelWaitingConfirm_Message1":"候补单 {0} 已经取消","Transport_TransportationAvailability_Wrong0":"获取站点失败","AreYouSureCancel":"是否确定取消？","Transport_CancelWaitingConfirm_BindDataWrong":"查詢候補信息失敗","ErrorMsg":"请求出错","All":"全部","Fri":"星期五","Mon":"星期一","Wed":"星期三","Tue":"星期二","Thu":"星期四","Sun":"星期日","Sat":"星期六","Yes":"是","Reply":"已回复","GuestTypeMember":"会员","SelectBag":"请选择球包","Transport_WaitSeatComfirmUC_SaveBusWaitWrong0":"获取候补票数失败","Transport_WaitSeatComfirmUC_SaveBusWaitWrong1":"获取预订总票数失败","Transport_CancelConfirm_Page_LoadMessage":"将取消整张预订单,是否确定取消?","ProductDetail_ErrorMessage3":"请选择商品规格信息","ProductDetail_ErrorMessage2":"获取商品已选规格信息失败","ProductDetail_ErrorMessage1":"库存不足","ProductDetail_ErrorMessage4":"修改失败","Tips_msg184":"嘉宾买十送一优惠，目前总共购买{0}本嘉宾套餐，已免费{1}本，需支付{2}元.","Tips_msg185":"一次性只能购买30本","Tips_msg186":"手机号码和邮箱必填一项","Tips_msg187":"只能一次性填入11本马拉松信息才能享用优惠。","Tips_msg180":"身份证不能空","Tips_msg181":"身份证格式不正确","Tips_msg182":"手机号码不能空","Tips_msg183":"于2019年4月30日前报名的球手都将获赠观澜湖果岭券一张(有效期至2019年9月13日).","Tips_msg188":"购买马拉松通道已关闭！","Tips_msg189":"级别不能空","Tips_msg195":"输入关键字搜索","Tips_msg194":"至少选择一个项目","Tips_msg197":"巴士预订暂时只为会员开通，后续为您开通，敬请期待。","Tips_msg196":"预约多项目或者套餐时，请备注您所需的要求，比如项目时间上的分配等等","Tips_msg191":"请选择级别","Tips_msg190":"请输入员工号","Tips_msg193":"选择项目和技师","Tips_msg192":"无挂账权限","Tips_msg199":"海南权益卡","Tips_msg198":"深莞会员","Tips_msg148":"税号不能空","Tips_msg149":"名称不能空","Tips_msg140":"结账成功","Tips_msg141":"挂账成功","Tips_msg142":"查看月结单","Tips_msg143":"查看结账单","Tips_msg144":"自助结账","Tips_msg145":"获取发票信息出错","Tips_msg146":"请先到个人中心填写发票信息","Tips_msg147":"对不起，只有会员才能自助结账！","Tips_msg168":"确定删除吗?","Tips_msg169":"请填写购买人信息后再支付！","Tips_msg162":"结账失败","Tips_msg163":"同意","Tips_msg160":"此预订已确认或者已取消，不能修改！","Tips_msg161":"共计0费用，是否继续结账？","Tips_msg166":"查看马拉松订单","Tips_msg167":"你可以优惠{0}本，是否放弃添加继续结账?","Tips_msg164":"不同意","Tips_msg165":"购买马拉松","Tips_msg159":"异常","Tips_msg158":"已确认","Tips_msg151":"保存失败","Tips_msg150":"保存成功","Tips_msg153":"输入纳税人识别号(必填)","Tips_msg152":"输入抬头(必填)","Tips_msg155":"输入公司电话号码","Tips_msg154":"输入公司地址","Tips_msg157":"输入公司银行帐号","Tips_msg156":"输入公司开户银行","Tips_msg108":"不存在此技师！","Tips_msg109":"{0},时段：{1}已被占用!","Tips_msg104":"项目不能为空！","Tips_msg105":"预订不存在","Tips_msg106":"预订已经确认，不能修改！","Tips_msg107":"项目已不存在！","Tips_msg100":"数量","Tips_msg101":"技师不能为空！","Tips_msg102":"不能预订过去时间！","Tips_msg103":"网上预定规定时间范围：11:00至21:00","Tips_msg179":"非会员中英文名必填一项","Tips_msg178":"价格异常","Tips_msg173":"请输入身份证号码","Tips_msg172":"请输入英文名","Tips_msg171":"请输入中文名","Tips_msg170":"数据已被修改，请刷新后再操作！","Tips_msg177":"未满18周岁的儿童不可报名参加马拉松","Tips_msg176":"性别不能空","Tips_msg175":"身份不能空","Tips_msg174":"会员身份({0})价格未设置，请联系管理员设置后再购买！","Tips_msg128":"请选择支付方式","Tips_msg129":"微信支付","Tips_msg126":"继续扫码","Tips_msg127":"立即支付","Tips_msg124":"取消政策","Tips_msg125":"请认真浏览完再点确定","Tips_msg122":"马拉松预订时，非权益不能携带嘉宾","Tips_msg123":"目前可预订时间已满，请联系SPA前台，电话：{0}","Tips_msg120":"未绑定，无需解绑！","Tips_msg121":"有效","Tips_msg119":"确定要解除绑定？","Tips_msg118":"此马拉松号无相关权益！","Tips_msg115":"商品信息有误","Tips_msg114":"兑换商品失败","Tips_msg117":"人数不对！","Tips_msg116":"兑换商品失败","Tips_msg111":"预定失败","Tips_msg110":"获取预定人信息失败","Tips_msg113":"商品信息或兑换数量有误","Tips_msg112":"取消预定失败","Tips_msg139":"存在未完结打球记录，不能结账","Tips_msg138":"挂账密码不正确！","Tips_msg137":"获取结账会员信息失败","Tips_msg136":"挂账失败","Tips_msg135":"请输入挂账密码","Tips_msg134":"存在未记账单，请联系管理员处理后再结账！","Tips_msg133":"已添加，请勿重复添加！","Tips_msg132":"暂无可结账记录","Tips_msg131":"确认支付","Tips_msg130":"会员挂账","Tips_msg287":"请勾选同意后再继续","Tips_msg286":"照片不能为空","Tips_msg285":"远程服务出现异常","Tips_msg284":"获取会员数据出现异常","Tips_msg283":"尚未注册","Tips_msg282":"未找到会员信息","Tips_msg281":"人脸对比出错","Tips_msg280":"人脸对比不匹配","Tips_msg289":"已退{0}元","Tips_msg288":"微信接口出错","Tips_msg296":"完成人脸认证","Tips_msg297":"自助登记","Tips_msg294":"人脸认证","Tips_msg295":"下一步","Tips_msg292":"我已充分了解人脸认证条件，愿意继续认证。","Tips_msg293":"观澜湖会员人脸认证须知","Tips_msg290":"人脸验证失败，请录入正确的人脸","Tips_msg291":"请点击拍照","Tips_msg298":"此预订单需由会员登记","Tips_msg299":"人脸验证失败","Tips_msg269":"保存照片出现异常","Tips_msg268":"更新数据失败","Tips_msg261":"已认证","Tips_msg260":"待审核","Tips_msg263":"会员信息错误","Tips_msg262":"审核未通过","Tips_msg265":"没有线下人脸照片，已进入待审核状态，需人工审核确认。","Tips_msg264":"会员认证状态不正确","Tips_msg267":"您的人脸认证待人工审核，请返回使用密码","Tips_msg266":"已成功注册会员信息","Tips_msg278":"图片保存失败","Tips_msg279":"人脸比对成功","Tips_msg270":"照片为空","Tips_msg271":"人脸不匹配","Tips_msg272":"人脸匹配出错","Tips_msg273":"人脸对比失败","Tips_msg274":"会员名为空","Tips_msg275":"人脸注册失败","Tips_msg276":"人脸注册出现异常","Tips_msg277":"人脸图片错误","Tips_msg249":"请在此处输入密码","Tips_msg248":"请输入会员密码","Tips_msg243":"查看高球订单","Tips_msg242":"高球订单","Tips_msg241":"登记成功，请于开球时间前十五分钟到球僮部前台报到","Tips_msg240":"登记失败","Tips_msg247":"未结帐","Tips_msg246":"已结账","Tips_msg245":"查看登记信息","Tips_msg244":"登记押金","Tips_msg258":"初审未通过，请等待人工审核，完成进度请在人个中心人脸认证下查看。","Tips_msg259":"请先点击圆圈拍摄人脸","Tips_msg252":"验证通过","Tips_msg253":"会员密码错误","Tips_msg250":"会员证号为空","Tips_msg251":"请输入会员密码","Tips_msg256":"人脸识别","Tips_msg257":"人脸认证待审核","Tips_msg254":"接口出错","Tips_msg255":"未找到该会员的密码","Tips_msg229":"点击此处","Tips_msg228":"有效消费卡不足","Tips_msg225":"未日结，请稍候","Tips_msg224":"支付押金{0}元","Tips_msg227":"订单已登记","Tips_msg226":"E-Card码已登记过，无法继续使用","Tips_msg221":"会员有效期已到期","Tips_msg220":"客人打球洞数与完结洞数不同，请移至高球前台按洞埋单后再结账！","Tips_msg223":"单号错误","Tips_msg222":"下单失败","Tips_msg238":"请至少勾选一人进行登记","Tips_msg239":"存在E-Card为空或者E-Card重复使用，无法登记","Tips_msg234":"本人自愿遵守球会关于","Tips_msg235":"会员所邀嘉宾结账相关规定","Tips_msg236":"请阅读相关规定并同意后登记","Tips_msg237":"请先扫描第{0}位球员的E-Card码","Tips_msg230":"您的今日预订单中仍有打球人员未进行登记，请{0}继续自助登记。","Tips_msg231":"您还有登记未进行，请{0}继续自助登记。","Tips_msg232":"担保({0})","Tips_msg233":"已付{0}元","Tips_msg209":"球僮号","Tips_msg208":"正在查询，请稍等...","Tips_msg207":"查无数据","Tips_msg206":"点球童需要提前2天预定。","Tips_msg205":"选择球僮","Tips_msg204":"请先绑定马拉松","Tips_msg203":"规则","Tips_msg202":"请输入性别","Tips_msg201":"此会员证号已经被绑定过，不能重复绑定","Tips_msg200":"海南访客","Tips_msg218":"修改密码","Tips_msg219":"忘记密码","Tips_msg216":"未登录或登录已失效，将重新登录！","Tips_msg217":"获取","Tips_msg214":"此手机号码已被其它微信绑定！","Tips_msg215":"会员马拉松不能被绑定","Tips_msg212":"隐藏详情","Tips_msg213":"显示详情","Tips_msg210":"是否已注册过海南访客？","Tips_msg211":"账单已支付或者不存在，请勿提交支付！","Tips_msg368":"预缴满12个月请选择其中一种券免费赠送","Tips_msg369":"月费预缴","Tips_msg360":"会员账务资料为空","Tips_msg361":"会员种类不允许预缴","Tips_msg362":"请选择预缴年份","Tips_msg363":"请选择预缴月数量","Tips_msg364":"请选择券类型","Tips_msg365":"无需预缴","Tips_msg366":"预缴年份不能空","Tips_msg367":"预缴月数量不能空","Tips_msg348":"会员登录","Tips_msg349":"出生日期错误次数已达上限，被锁定！","Tips_msg342":"支付失败","Tips_msg343":"添加待付款单据失败","Tips_msg340":"请在微信浏览器中打开","Tips_msg341":"付款金额为0，无需支付","Tips_msg346":"无效会员状态","Tips_msg347":"非会员马拉松用户登录","Tips_msg344":"无挂帐权限","Tips_msg345":"历史会员暂停使用","Tips_msg378":"会员{0}不能自助结账，请去前台结账","Tips_msg371":"账户余额不足，不允许挂账！","Tips_msg370":"外卡支付","Tips_msg373":"请输入推荐人身份证号","Tips_msg372":"请输入推荐人姓名","Tips_msg375":"阁下在开球时间进入48小时内的预订只能修改一次开球时间及球场，且不能减少人数，确认后继续修改预订。","Tips_msg374":"请输入推荐人通行证号","Tips_msg377":"会员{0}不能自助登记，请去前台登记","Tips_msg376":"阁下在开球时间进入48小时内的预订已修改过一次，已无法再修改。","Tips_msg328":"内部错误，联系管理员","Tips_msg329":"发球台或者每洞杆数录入不完整","Tips_msg324":"查询不到计分数据","Tips_msg325":"请勿重复提交","Tips_msg326":"非自助登记的嘉宾无需提交差点","Tips_msg327":"请完善个人资料，再提交差点","Tips_msg320":"客人有未结单，请先结账后再登记","Tips_msg321":"预订中有马拉松客人，请到前台登记！","Tips_msg322":"录入格式不正确","Tips_msg323":"请选择发球台","Tips_msg359":"你购买的通行证中身份证号不匹配，请联系管理员！","Tips_msg358":"阁下的账户尚有余额，无须支付","Tips_msg353":"系统正在维护中...","Tips_msg352":"如阁下在开球时间进入48小时内修改或减少人数，系统会产生迟取消费用。","Tips_msg351":"购买非会员马拉松请选择","Tips_msg350":"购买会员马拉松请选择","Tips_msg357":"兑换成功，兑换之日起90天有效，请尽快使用，谢谢！","Tips_msg356":"结束日期不能小于开始日期或者跨度不能超过1年","Tips_msg355":"由于您的会员卡为不可挂帐状态，不可给予嘉宾做担保登记.","Tips_msg354":"此球场为非权益球场，您的通行证能打的非权益球场已经超标！","Tips_msg308":"下场","Tips_msg309":"完结","Tips_msg306":"登记","Tips_msg307":"安排","Tips_msg304":"非当日预订不能登记","Tips_msg305":"获取用户照片出现异常","Tips_msg302":"马拉松用户需完善预订信息","Tips_msg303":"预定号码或者手机号码不正确","Tips_msg300":"未找到符合要求的会员信息","Tips_msg301":"照片不符合要求","Tips_msg339":"获取账户类型异常","Tips_msg338":"请选择月结区间","Tips_msg335":"请选择其中一个马拉松登记","Tips_msg334":"嘉宾登记","Tips_msg337":"非马拉松持有者","Tips_msg336":"查询马拉松信息异常","Tips_msg331":"查看计分","Tips_msg330":"去计分","Tips_msg333":"会员登记","Tips_msg332":"请选择账户类型","Tips_msg319":"会员权益不够或状态异常请去前台登记","Tips_msg318":"请您对球僮作出诚恳的评价","Tips_msg317":"请您对球场作出诚恳的评价","Tips_msg316":"生成付款号错误","Tips_msg315":"生成流水号错误","Tips_msg314":"生成登记号失败","Tips_msg313":"消费卡异常","Tips_msg312":"只能在规定的时间内自助登记","Tips_msg311":"存在非预订的客人，不能登记","Tips_msg310":"提示","SuccessWaiting":"候补成功。候补单号：","TransportWaitinghasbeenComfirm":"此候补单已确认，不能再取消","WechatBindSuccess":"绑定微信成功！","SystemError":"系统发生错误,请联络系统管理员.\u003cbr/\u003e错误原因:{0}","BookingSuccess":"预订成功","CaddieNotInSelectedArea":"所选球僮不在所选区域,球僮号如下:{0} ,请重选.","VCodeSuccess":"发送成功请耐心等待....","FailedGCode":"获取验证码失败","PointsRequired":"，所需积分：","RedeemIt":"，您确定要兑换吗？","CancelComfrim":"您的预订已经取消 取消单号为:","ExchangeSuccess":"您已成功兑换，奖赏立即生效。一经兑换，不能更改/取消。兑换成功,您本次兑换物品：{0}，共使用了{1}积分，券有效期为{2}至{3}","BookingExist":"会员当日已预订，单号：{0}","FailedSendCode":"发送验证码失败","ClickHere":"点击此处","TimeRemaining":"剩余操作时间: {0} 秒","WechatUnBindSuccess":"解绑微信成功！","Account_ModifyUserInfo_Wrong":"修改用户注册信息失败","RedirectMsg":"正在跳转...","TeetimeExpired":"打球时间已过期。","Transport_NewWaiting_Message2":"联系人是必需的","Transport_NewWaiting_Message0":"座位数必须为数字","Transport_NewWaiting_Message1":"座位数不能大于20","Transport_NewWaiting_Message4":"手机或联系电话为空","Transport_NewWaiting_Message5":"时间范围的起始时间不能小于截至时间","Packer_OK":"确定","WaitingForExistConfirm":"您当日已经候补上,并已经确认.单号是:","WechatUnbindFail":"解绑微信失败！","UI_Volidate_Message1":"出生日期是必需的","MobileRequired":"手机号码是必需的","Transport_CancelConfirm_Page_btnBack_ClickWrong":"解锁线路失败","PleaseSelect":"请选择","Transport_NewWaiting_Wrong0":"更新候补信息失败","SelectDate":"请选择日期","SelectTime":"请选择时间","Account_Register_Message4":"电话区号是必需的","Account_Register_Message5":"验证邮箱格式错误","Account_Register_Message2":"手机号码与确认号码不一致","Account_Register_Message3":"电话号码是必需的","Account_Register_Message0":"会员证号是必需的","Account_Register_Message1":"登录名是必需的","UI_CheckUserByType_Wrong2":"会员证号或生日错误","UI_CheckUserByType_Wrong3":"会员证号或登录名或手机号码错误","UI_CheckUserByType_Wrong0":"判断能否注册","UI_CheckUserByType_Wrong1":"你还没有注册网上预订系统","ProductDetail_String5":"结算","ProductDetail_String4":"请选择需要结算的商品","ProductDetail_String1":"积分","ProductDetail_String3":"免费兑换","ProductDetail_String2":"选择规格后价格呈现","Logout1":"退出","CannotDate":"对不起,不能预订该日期!","Transport_WaitingListCancellation_Wrong1":"获取候补列表失败","MyCard_Message1":"请勿频繁刷新","Transport_WaitingListConfirm_Wrong2":"候补单 {0} 确认失败","Transport_WaitingListConfirm_Wrong0":"是否确定预订？","Transport_WaitingListConfirm_Wrong1":"候补单 {0} 已经确认","LockOrderFailed":"锁定订单失败","NotEnoughIntegral":"积分卡剩余积分不够兑换","MainPlayer":"主预订者","Transport_TransportUC_SaveInputSeatWrong0":"请输入座位数(大于零)!","Transport_TransportUC_SaveInputSeatWrong1":"请选择一条路线!","CannotPeriod":"对不起,不能预定该时段!","EPassword":"恭喜你注册成功!密码已发送到您的邮箱,请查收。","FailedWaiting":"候补失败","WaitingForUsage":"该时段封场不可以候补!","WaitingForExist":"已经候补过","UI_SendMailForForgetPassword_OK":"密码已发送到您的邮箱或手机，请查收","UI_GetBackUserPassword_Wrong":"获取用户密码失败","NotExceedPlayTimes":"会员打球次数不足","Transport_WaitSeatComfirmUC_ValidateInputMessage2":"候补起始时间不能晚于结束时间!","TrySendCode":"两分钟之内不能连续发送","ScoreCardNotExist":"对不起，积分卡不存在，请联系观澜湖球会","SameMember":"存在多个相同的会员证号","AlreadyBook":"该天您有预订,预订单号:","SelectCourse":"请选择球场","DoNotChooseGolfBag":"不选择球包","Waiting":"候补确认","Evaluation_Tips2":"已评分","Evaluation_Tips3":"待评分","Back":"返回","Book":"预订","Time":"时间","InvalidMemberID":"该会员号码无效","Suggest":"建议"}]);JSResource=json[0];</script>-->
+  <!--    <script type="text/javascript">-->
+  <!--        //<![CDATA[-->
+  <!--        layer.open({title:' ',closeBtn:0,content:'未登录或登录已失效，将重新登录！',btn: ['确定'],yes: function(){ window.location.href='/login.aspx'}});//]]>-->
+  <!--    </script>-->
+</form>
+</body>
+</html>
